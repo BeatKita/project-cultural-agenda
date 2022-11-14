@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
-  root "events#index"
-  get "/events", to: "events#index"
+  
+  get "/admin/events/new", to: "events#new", as: "new_event"
+  post "/events", to: "events#create"
   # Defines the root path route ("/")
   # root "articles#index"
 end
