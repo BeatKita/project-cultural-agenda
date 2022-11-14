@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_10_163219) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_14_150222) do
   create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "place_name"
+    t.string "name", limit: 40
+    t.string "description", limit: 250
+    t.string "place_name", limit: 30
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
