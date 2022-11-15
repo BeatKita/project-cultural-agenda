@@ -1,11 +1,8 @@
 class EventsController < ApplicationController
-  def index
-  
-  end
+  def index; end
 
   def new
     @event = Event.new
-  
   end
 
   def create
@@ -18,5 +15,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :description, :place_name, :start_date, :end_date)
   end
-
 end
