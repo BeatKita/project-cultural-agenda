@@ -1,0 +1,6 @@
+<%= link_to "Créer un nouvel event", events_new_path %>
+<br>
+<br>
+<% @events.each do |event| %>
+  <%= event.name + " " + event.description + " " + event.place_name + " " + event.start_date.to_s + " " + event.end_date.to_s %><br><br>
+<% end %>
