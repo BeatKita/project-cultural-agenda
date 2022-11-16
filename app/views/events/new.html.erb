@@ -1,6 +1,15 @@
 <h1>Création nouvel Event</h1>
 
-<%= form_with model: @event do |form| %>
+<%= form_with model: @event, data: {turbo: false} do |form| %>
+  <% if @event.errors.present? %>
+    Erreurs formulaire :
+    <br>
+    <% @event.errors.each do |error| %>
+      <%= error.full_message %>
+      <br>
+      <br>
+    <% end %>
+  <% end %>
   <%= form.label :name, "Nom" %>
   <%= form.text_field :name %>
   <br>
