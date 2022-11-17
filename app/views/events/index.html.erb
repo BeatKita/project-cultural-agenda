@@ -3,6 +3,7 @@
 <br>
 <% @events.each do |event| %>
   <%= event.name + " " + event.description + " " + event.place_name + " " + event.start_date.to_s + " " + event.end_date.to_s %>
+  <%= link_to "Editer cet évènement.", admin_events_edit_path(event.id) %>
   <br>
   <br>
 <% end %>
