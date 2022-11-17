@@ -1,5 +1,5 @@
 
-<%= form_with model: @event, url: admin_events_path, data: {turbo: false} do |form| %>
+<%= form_with model: @event, url: controller.action_name.match?("edit") || controller.action_name.match("update") ? admin_events_update_path(@event.id) : admin_events_path, data: {turbo: false} do |form| %>
   <% if @event.errors.present? %>
     Erreurs formulaire :
     <br>
@@ -25,3 +25,5 @@
   <br>
   <%= form.submit "Créer un nouvel Event" %>
 <% end %>
+
+<%= controller.action_name %>
