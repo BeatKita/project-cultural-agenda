@@ -11,10 +11,13 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      redirect_to events_path
+      redirect_to admin_events_path
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   private
