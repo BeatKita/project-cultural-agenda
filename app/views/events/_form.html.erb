@@ -9,7 +9,7 @@
     <% end %>
   <% end %>
   <%= form.label :name, "Nom" %>
-  <%= form.text_field :name %>
+  <%= form.text_field :name, disabled: controller.action_name.match?("edit") %>
   <br>
   <%= form.label :description, "Description" %>
   <%= form.text_area :description %>
@@ -26,4 +26,3 @@
   <%= form.submit "Créer un nouvel Event" %>
 <% end %>
 
-<%= controller.action_name %>
