@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "/admin/events", to: "events#create"
   get "/admin/events/:id/edit", to: "events#edit", as: "admin_events_edit"
   patch "/admin/events/:id", to: "events#update", as: "admin_events_update"
+  delete "/admin/events/:id", to: "events#destroy", as: "admin_events_destroy"
   # Defines the root path route ("/")
   # root "articles#index"
 end

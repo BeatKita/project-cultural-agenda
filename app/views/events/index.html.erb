@@ -3,7 +3,8 @@
 <br>
 <% @events.each do |event| %>
   <%= event.name + " " + event.description + " " + event.place_name + " " + event.start_date.to_s + " " + event.end_date.to_s %>
-  <%= link_to "Editer cet évènement.", admin_events_edit_path(event.id) %>
+  <%= link_to "Editer cet évènement", admin_events_edit_path(event.id) %>
+  <%= link_to "Supprimer cet évènement", admin_events_destroy_path(event.id), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet évènement?"} %>
   <br>
   <br>
 <% end %>
