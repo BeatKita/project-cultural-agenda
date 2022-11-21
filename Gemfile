@@ -7,7 +7,7 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem "sprockets-rails", "~> 3.4", ">= 3.4.2"
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 # Bootstrap installation test
 gem "bootstrap", "~> 5.2.2"
+gem "bootstrap_form"
 
 # Execjs install test
 gem "execjs"
