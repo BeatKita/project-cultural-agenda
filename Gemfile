@@ -43,11 +43,11 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "bootsnap", require: false
 
 # Bootstrap installation test
-gem "bootstrap", "~> 5.2.2"
+gem "bootstrap", "~> 5.0.0"
 gem "bootstrap_form"
 
 # Execjs install test
-gem "execjs"
+gem "execjs", "~> 2.8.1"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
