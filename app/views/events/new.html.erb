@@ -1,20 +1,3 @@
 <h1>Création nouvel Event</h1>
 
-<%= form_with model: @event do |form| %>
-  <%= form.label :name, "Nom" %>
-  <%= form.text_field :name %>
-  <br>
-  <%= form.label :description, "Description" %>
-  <%= form.text_area :description %>
-  <br>
-  <%= form.label :place_name, "Lieu" %>
-  <%= form.text_field :place_name %>
-  <br>
-  <%= form.label :start_date, "Début" %>
-  <%= form.date_field :start_date %>
-  <br>
-  <%= form.label :end_date, "Fin" %>
-  <%= form.date_field :end_date %>
-  <br>
-  <%= form.submit "Créer un nouvel Event" %>
-<% end %>
+<%= render "form", event: @event %>
