@@ -43,8 +43,8 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "bootsnap", require: false
 
 # Bootstrap installation test
-gem "bootstrap", "~> 5.0.0"
-gem "bootstrap_form"
+gem "bootstrap", "~> 5.2.2"
+gem "bootstrap_form", "~> 5.0.0"
 
 # Execjs install test
 gem "execjs", "~> 2.8.1"
