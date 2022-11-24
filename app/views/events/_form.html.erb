@@ -1,28 +1,45 @@
 
-<%= form_with model: @event, url: controller.action_name.match?("edit") || controller.action_name.match("update") ? admin_events_update_path(@event.id) : admin_events_path, data: {turbo: false} do |form| %>
-  <% if @event.errors.present? %>
-    Erreurs formulaire :
-    <br>
-    <% @event.errors.each do |error| %>
-      <%= error.full_message %>
-      <br>
-    <% end %>
-  <% end %>
-  <%= form.label :name, "Nom" %>
-  <%= form.text_field :name, disabled: controller.action_name.match?("edit") %>
-  <br>
-  <%= form.label :description, "Description" %>
-  <%= form.text_area :description %>
-  <br>
-  <%= form.label :place_name, "Lieu" %>
-  <%= form.text_field :place_name %>
-  <br>
-  <%= form.label :start_date, "Début" %>
-  <%= form.date_field :start_date %>
-  <br>
-  <%= form.label :end_date, "Fin" %>
-  <%= form.date_field :end_date %>
-  <br>
-  <%= form.submit "Créer un nouvel Event" %>
-<% end %>
+<div class="container" style="padding-top:5%">
+  <div class="row">
+    <div class="col">
+      <div class="card mx-auto border-light">
+        <div class="card-body" style="margin-left: 25%; margin-right: 35%">
+          <div style="padding-bottom:10%">
+            <h1>Création nouvel Event</h1>
+          </div>
+          <%= bootstrap_form_with model: @event, url: controller.action_name.match?("edit") || controller.action_name.match("update") ? admin_events_update_path(@event.id) : admin_events_path, data: {turbo: false} do |form| %>
+            <% if @event.errors.present? %>
+              Erreurs formulaire :
+            <br>
+            <% @event.errors.each do |error| %>
+            <%= error.full_message %>
+            <br>
+            <% end %>
+            <% end %>
+            <%= form.text_field :name, disabled: controller.action_name.match?("edit") %>
+            <br>
+            <%= form.text_area :description %>
+            <br>
+            <%= form.text_field :place_name %>
+            <br>
+            <div class="row g-3">
+              <div class="col">
+                <%= form.date_field :start_date %>
+              </div>
+              <div class="col">
+                <%= form.date_field :end_date %>
+              </div>  
+            </div>
+            <br>
+            <div class="row">
+              <div class="col offset-md-1">
+                <%= form.submit "Créer un nouvel Event", class: "btn btn-primary btn-sm" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
