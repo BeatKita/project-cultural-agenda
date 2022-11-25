@@ -35,9 +35,9 @@ en:
 en:
   helpers:
     submit:
-      new: "Créer un évènement"
-      create: "Créer un évènement"
-      edit: "Editer un évènement"
-      update: "Editer un évènement"
+      new: "Créer"
+      create: "Créer"
+      edit: "Modifier"
+      update: "Modifier"
 
 
