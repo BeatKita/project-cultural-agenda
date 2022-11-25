@@ -31,3 +31,13 @@
 
 en:
   hello: "Hello world"
+
+en:
+  helpers:
+    submit:
+      new: "Créer un évènement"
+      create: "Créer un évènement"
+      edit: "Editer un évènement"
+      update: "Editer un évènement"
+
+

@@ -1,12 +1,9 @@
 
-<div class="container" style="padding-top:5%">
+<div class="container" style="padding-top:2%">
   <div class="row">
     <div class="col">
       <div class="card mx-auto border-light">
         <div class="card-body" style="margin-left: 25%; margin-right: 35%">
-          <div style="padding-bottom:10%">
-            <h1>Création nouvel Event</h1>
-          </div>
           <%= bootstrap_form_with model: @event, url: controller.action_name.match?("edit") || controller.action_name.match("update") ? admin_events_update_path(@event.id) : admin_events_path, data: {turbo: false} do |form| %>
             <% if @event.errors.present? %>
               Erreurs formulaire :
@@ -16,24 +13,24 @@
             <br>
             <% end %>
             <% end %>
-            <%= form.text_field :name, disabled: controller.action_name.match?("edit") %>
+            <%= form.text_field :name, label: "Nom : ", disabled: controller.action_name.match?("edit") %>
             <br>
-            <%= form.text_area :description %>
+            <%= form.text_area :description, label: "Description : " %>
             <br>
-            <%= form.text_field :place_name %>
+            <%= form.text_field :place_name, label: "Lieu : " %>
             <br>
             <div class="row g-3">
               <div class="col">
-                <%= form.date_field :start_date %>
+                <%= form.date_field :start_date, label: "Date de début : " %>
               </div>
               <div class="col">
-                <%= form.date_field :end_date %>
+                <%= form.date_field :end_date, label: "Date de fin : " %>
               </div>  
             </div>
             <br>
             <div class="row">
               <div class="col offset-md-1">
-                <%= form.submit "Créer un nouvel Event", class: "btn btn-primary btn-sm" %>
+                <%= form.submit class: "btn btn-primary btn-sm" %>
               </div>
             </div>
           <% end %>
