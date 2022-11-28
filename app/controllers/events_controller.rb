@@ -8,7 +8,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    hello()
     @event = Event.new(event_params)
 
     if @event.save
