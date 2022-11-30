@@ -1,16 +1,25 @@
-<h2>Resend confirmation instructions</h2>
+<div class="container" style="padding-bottom:2%">
+  <div class="row">
+    <div class="col">
+      <div class="card mx-auto border-light">
+        <div class="card-body" style="margin-left: 25%; margin-right: 35%">
+          <h2>Renvoyer les instructions de confirmation</h2>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "admins/shared/error_messages", resource: resource %>
+          <%= bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+            <%= render "admins/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+            <div class="field">
+              <%= f.email_field :email, label: "Email", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Renvoyer les instructions de confirmation", :class => "btn btn-primary" %>
+            </div>
+          <% end %>
+          <br />
+          <%= render "admins/shared/links" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+</div>

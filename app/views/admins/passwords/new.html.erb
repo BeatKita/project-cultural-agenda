@@ -1,16 +1,24 @@
-<h2>Forgot your password?</h2>
+<div class="container" style="padding-bottom:2%">
+  <div class="row">
+    <div class="col">
+      <div class="card mx-auto border-light">
+        <div class="card-body" style="margin-left: 25%; margin-right: 35%">
+        <h2>Mot de passe oublié ?</h2>
+          <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= render "admins/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "admins/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <div class="field">
+              <%= f.email_field :email, label: "Email", autofocus: true, autocomplete: "email" %>
+            </div>
+            <br />
+            <div class="actions">
+              <%= f.submit "M'envoyer les instructions pour réinitialiser mon mot de passe", :class => "btn btn-primary" %>
+            </div>
+          <% end %>
+          <br />
+          <%= render "admins/shared/links" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+</div>
