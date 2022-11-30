@@ -11,9 +11,26 @@
   </head>
 
   <body>
-  <nav class="navbar" style="background-image: linear-gradient(white, lightgray, white);">
-  <a class="navbar-brand" href="/admin/events/">CulturalAgenda</a>
-  </nav>
+    <nav class="navbar" style="background-image: linear-gradient(white, lightgray, white);">
+      <a class="navbar-brand" href="/admin/events/">CulturalAgenda</a>
+      <ul class="navbar-nav">
+        <% if admin_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Hi, #{current_admin.email}", edit_admin_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_admin_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_admin_registration_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
     <p class="notice"><%= notice %></p> 
     <p class="alert"><%= alert %></p> 
     <%= yield %>
