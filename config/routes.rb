@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admins, controllers: {
+    sessions: "admins/sessions"
+  }
+  authenticated :admin do 
+    resources :admins
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   
@@ -9,5 +15,5 @@ Rails.application.routes.draw do
   patch "/admin/events/:id", to: "events#update", as: "admin_events_update"
   delete "/admin/events/:id", to: "events#destroy", as: "admin_events_destroy"
   # Defines the root path route ("/")
-  # root "articles#index"
+   root "pages#home"
 end
