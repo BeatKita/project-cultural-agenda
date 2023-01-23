@@ -46,6 +46,9 @@ gem "bootsnap", require: false
 gem "bootstrap", "~> 5.2.2"
 gem "bootstrap_form", "~> 5.0.0"
 
+# Devise - authentication and authorization
+gem "devise", "~> 4.0"
+
 # Execjs install test
 gem "execjs", "~> 2.8.1"
 

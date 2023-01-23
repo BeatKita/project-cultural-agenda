@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admins, controllers: {
+    sessions: "admins/sessions"
+  }
+  authenticated :admin do 
+    resources :admins
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   
@@ -18,5 +24,5 @@ Rails.application.routes.draw do
 
 
   # Defines the root path route ("/")
-  # root "articles#index"
+   root "pages#home"
 end
