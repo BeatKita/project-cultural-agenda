@@ -17,7 +17,7 @@
             <br>
             <%= form.text_area :description, label: "Description : " %>
             <br>
-            <%= form.text_field :place_name, label: "Lieu : " %>
+            <%= form.collection_select(:event_place_id, EventPlace.all, :id, :name) %>
             <br>
             <div class="row g-3">
               <div class="col">

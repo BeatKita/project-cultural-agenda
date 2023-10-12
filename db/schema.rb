@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_143439) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_02_183841) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -41,6 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_143439) do
     t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "event_place_id", null: false
+    t.index ["event_place_id"], name: "index_events_on_event_place_id"
   end
 
+  add_foreign_key "events", "event_places"
 end

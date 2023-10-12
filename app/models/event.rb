@@ -1,7 +1,6 @@
 class Event < ApplicationRecord
   validates :name, length: { maximum: 40 }, presence: true
   validates :description, length: { maximum: 250 }, presence: true
-  validates :place_name, length: { maximum: 30 }, presence: true
   validate :start_date_cannot_be_in_the_past
   def start_date_cannot_be_in_the_past
     return if start_date.present? && start_date > Date.today
@@ -14,4 +13,5 @@ class Event < ApplicationRecord
 
     errors.add(:end_date, "can't be older than start date")
   end
+  belongs_to :event_place
 end

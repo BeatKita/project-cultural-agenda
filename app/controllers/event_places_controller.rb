@@ -40,7 +40,7 @@ class EventPlacesController < ApplicationController
     private
 
     def event_params
-    parameters = [:description, :adress, :open_hour, :close_hour ]
+    parameters = [:description, :place_name, :open_hour, :close_hour ]
     parameters << :name if action_name.match?("create")
     params.require(:eventplace).permit(parameters)
     end

@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    parameters = [:description, :place_name, :start_date, :end_date]
+    parameters = [:description, :event_place_id, :place_name, :start_date, :end_date]
     parameters << :name if action_name.match?("create")
     params.require(:event).permit(parameters)
   end
